@@ -10,7 +10,8 @@
   },
   "defaultScriptType":1,
   "Folders":[
-    {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Demo","folderPath":"folders/Demo.yy","name":"Demo","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Stash","folderPath":"folders/Stash.yy","name":"Stash","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[],
   "isEcma":false,
@@ -20,8 +21,11 @@
   },
   "name":"Stash",
   "resources":[
+    {"id":{"name":"Stash Documentation","path":"notes/Stash Documentation/Stash Documentation.yy",},},
     {"id":{"name":"rm_demo","path":"rooms/rm_demo/rm_demo.yy",},},
-    {"id":{"name":"scr_stash_save_system","path":"scripts/scr_stash_save_system/scr_stash_save_system.yy",},},
+    {"id":{"name":"scr_demo","path":"scripts/scr_demo/scr_demo.yy",},},
+    {"id":{"name":"scr_stash_config","path":"scripts/scr_stash_config/scr_stash_config.yy",},},
+    {"id":{"name":"scr_stash_functions","path":"scripts/scr_stash_functions/scr_stash_functions.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

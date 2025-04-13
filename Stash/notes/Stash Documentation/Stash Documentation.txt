@@ -1,0 +1,17 @@
+
+	[]=========================================================[]
+	||                    	Stash Save/Load System for GMS2	   ||
+	||                    									   ||
+	||                    				          --KrugDev	   ||
+	[]=========================================================[]
+	
+	How to use!
+	1. Import the script to your game
+	2. Edit the EmptySave constructor. It will be your default structure
+	   for saving game data
+	3. Acess your game data by the global.gamedata or by the macro STASH_DATA
+	   E.g. obj_player.life = STASH_DATA.player.life
+	
+	Important!
+	json_save() is called by default at each 60 seconds, but you can deactivate that 
+	and call it whenever you want, like in a Game End event on an obj_controller
