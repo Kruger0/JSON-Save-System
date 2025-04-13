@@ -13,8 +13,8 @@
   ],
   "name":"rm_demo",
   "parent":{
-    "name":"Stash Save System",
-    "path":"Stash Save System.yyp",
+    "name":"Stash",
+    "path":"Stash.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{
