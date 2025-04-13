@@ -1,5 +1,5 @@
-# JSON Save
- A JSON based save system for GameMaker
+<h1 align="center">Stash 1.0</h1>
+ A buffer based save/load system for GameMaker
 
 How to use!
 1. Import the script to your game
