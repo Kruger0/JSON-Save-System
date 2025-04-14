@@ -9,6 +9,8 @@ global.data = stash_default("data.sav", {
 	coins : []
 })
 
+stash_save(global.data, "data.sav")
+
 // Custom save/load
 data_save = function() {
 	
@@ -34,6 +36,7 @@ data_save = function() {
 data_load = function() {
 	
 	global.data = stash_load("data.sav")
+	show_message(global.data)
 
 	// Load player data
 	if (instance_exists(obj_player)) {

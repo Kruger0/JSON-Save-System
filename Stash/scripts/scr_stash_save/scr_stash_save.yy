@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_stash",
+  "%Name":"scr_stash_save",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_stash",
+  "name":"scr_stash_save",
   "parent":{
     "name":"Stash",
     "path":"folders/Stash.yy",

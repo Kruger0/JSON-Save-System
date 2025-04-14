@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_stash_arcfour",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_stash_arcfour",
+  "parent":{
+    "name":"Stash",
+    "path":"folders/Stash.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
