@@ -21,8 +21,8 @@ function stash_save(_filename, _struct, _secure = STASH_SAVE_SECURE) {
 		buffer_seek(_buffer_temp, buffer_seek_start, 0);
 		buffer_write(_buffer_temp, buffer_u32, _chksm);
 		buffer_copy(_buffer_chksm, 0, _size, _buffer_temp, 4);
-		_buffer = buffer_compress(_buffer_temp, 0, _size + 4);
-		_buffer = stash_arcfour_process(STASH_PRIVATE_KEY, _buffer);
+		_buffer = stash_arcfour_process(STASH_PRIVATE_KEY, _buffer_temp);
+		_buffer = buffer_compress(_buffer, 0, _size + 4);
 		buffer_delete(_buffer_chksm);
 		buffer_delete(_buffer_temp);
     } else {
