@@ -25,7 +25,6 @@
     {"id":{"name":"obj_demo","path":"objects/obj_demo/obj_demo.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"rm_demo","path":"rooms/rm_demo/rm_demo.yy",},},
-    {"id":{"name":"scr_stash_arcfour","path":"scripts/scr_stash_arcfour/scr_stash_arcfour.yy",},},
     {"id":{"name":"scr_stash_system","path":"scripts/scr_stash_system/scr_stash_system.yy",},},
     {"id":{"name":"spr_coin","path":"sprites/spr_coin/spr_coin.yy",},},
     {"id":{"name":"spr_floor","path":"sprites/spr_floor/spr_floor.yy",},},
