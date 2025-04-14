@@ -7,8 +7,8 @@
 	[]==========================================================[]
 */
 
-///@func stash_load(filename)
-function stash_load(_filename) {
+///@func stash_load(filename, [default], [secure])
+function stash_load(_filename, _default = undefined, _secure = STASH_ENCRYPT) {
 	if (file_exists(_filename)) {
 		var _buffer = buffer_load(_filename); 
 		buffer_seek(_buffer, buffer_seek_start, 0)		
@@ -27,19 +27,19 @@ function stash_load(_filename) {
 			buffer_delete(_buffer_chksm)			
 			if (_chksm1 == _chksm2) {
 				var _struct = json_parse(_string)
-				if (STASH_DEBUG_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" loaded from {filename_path(_filename)}")
+				if (STASH_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" loaded from {filename_path(_filename)}")
 				buffer_delete(_buffer)
 				return _struct
 			}
-			if (STASH_DEBUG_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" is corrupted}")
+			if (STASH_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" is corrupted}")
 		}
 		buffer_seek(_buffer, buffer_seek_start, 0)		
 		var _string = buffer_read(_buffer, buffer_text)
 		var _struct = json_parse(_string)
-		if (STASH_DEBUG_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" loaded from {filename_path(_filename)}")
+		if (STASH_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" loaded from {filename_path(_filename)}")
 		return _struct
 	} else {
-		if (STASH_DEBUG_TRACE) {
+		if (STASH_TRACE) {
 			show_debug_message($"[Stash] - File \"{_filename}\" not found. Loading default data")
 		}
 	}

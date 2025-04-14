@@ -8,7 +8,7 @@
 */
 
 ///@func stash_default(filename, default, [secure])
-function stash_default(_filename, _default, _secure = STASH_SAVE_SECURE) {
+function stash_default(_filename, _default, _secure = STASH_ENCRYPT) {
 	if !(STASH_FORCE_DEFAULT) {
 		if (file_exists(_filename)) {
 			var _buffer = buffer_load(_filename); 	
@@ -33,19 +33,19 @@ function stash_default(_filename, _default, _secure = STASH_SAVE_SECURE) {
 						var _key = _keys[i]
 						_struct[$ _key] ??= _default[$ _key]
 					}			
-					if (STASH_DEBUG_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" loaded from {filename_path(_filename)}")
+					if (STASH_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" loaded from {filename_path(_filename)}")
 					buffer_delete(_buffer)
 					return _struct
 				}
-				if (STASH_DEBUG_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" is corrupted. Loading default data}")
+				if (STASH_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" is corrupted. Loading default data}")
 			}
 			buffer_seek(_buffer, buffer_seek_start, 0)		
 			var _string = buffer_read(_buffer, buffer_text)
 			var _struct = json_parse(_string)
-			if (STASH_DEBUG_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" loaded from {filename_path(_filename)}")
+			if (STASH_TRACE) show_debug_message($"[Stash] - File \"{_filename}\" loaded from {filename_path(_filename)}")
 			return _struct
 		} else {
-			if (STASH_DEBUG_TRACE) {
+			if (STASH_TRACE) {
 				show_debug_message($"[Stash] - File \"{_filename}\" not found. Loading default data")
 			}
 		}

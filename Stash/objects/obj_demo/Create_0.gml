@@ -1,21 +1,50 @@
 
+
 // Startup
-global.data = stash_default("data.sav", {
+global.data = stash_load("data.sav", {	
+	save_slot : [
+		{
+			name: "Save File 1",
+		},
+		{
+			name: "Save File 2",
+		},
+	],
 	player : {
 		x : room_width/2,
 		y : room_height/2,
 		coins : 0,
 	},
 	coins : []
-})
+}, true)
 
-stash_save(global.data, "data.sav")
+/*
+só filename - carrega e retorna o arquivo ou -1
+filename e default - procura arquivo. se nao tiver, retorna o default. Se tiver, retorna o default com tudo do arquivo adicionado e sobreescrito
+		cria um save com essa informação baseada no terceiro argumento que será o secure
 
-global.config = stash_default("config.json", {
+
+procura por um arquivo
+se nao achar, salva o default
+se achar, carrega o arquivo
+passa por todas as keys que foram encontradas no arquivo
+procura essas keys no default
+se a key existir no default, sobreescreve
+se não existir, cria
+SRC e DST	- sobreescreve o dst
+!SRC e DST	- mantem o dst
+SRC e !DST	- adiciona no dst
+!SRC e !DST	- nada.
+*/
+
+
+global.config = stash_load("config.json", {
 	fullscreen : false,
 	lang : "EN-US",
 	audio: 0.5,
 }, false)
+
+
 
 // Custom save/load
 data_save = function() {
@@ -36,13 +65,13 @@ data_save = function() {
 		})
 	}
 	
-	stash_save("data.sav", global.data)
+	stash_save("data.sav", global.data, true)
 }
 
 data_load = function() {
 	
 	global.data = stash_load("data.sav")
-	show_message(global.data)
+
 	// Load player data
 	if (instance_exists(obj_player)) {
 		obj_player.x = global.data.player.x
