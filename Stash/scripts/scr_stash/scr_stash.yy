@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_demo",
+  "%Name":"scr_stash",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_demo",
+  "name":"scr_stash",
   "parent":{
-    "name":"Demo",
-    "path":"folders/Demo.yy",
+    "name":"Stash",
+    "path":"folders/Stash.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

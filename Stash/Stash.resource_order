@@ -1,11 +1,15 @@
 {
   "FolderOrderSettings":[
-    {"name":"Demo","order":1,"path":"folders/Demo.yy",},
     {"name":"Stash","order":2,"path":"folders/Stash.yy",},
   ],
   "ResourceOrderSettings":[
-    {"name":"scr_demo","order":1,"path":"scripts/scr_demo/scr_demo.yy",},
-    {"name":"scr_stash_config","order":1,"path":"scripts/scr_stash_config/scr_stash_config.yy",},
-    {"name":"scr_stash_functions","order":2,"path":"scripts/scr_stash_functions/scr_stash_functions.yy",},
+    {"name":"obj_coin","order":4,"path":"objects/obj_coin/obj_coin.yy",},
+    {"name":"obj_demo","order":1,"path":"objects/obj_demo/obj_demo.yy",},
+    {"name":"obj_player","order":2,"path":"objects/obj_player/obj_player.yy",},
+    {"name":"scr_stash","order":1,"path":"scripts/scr_stash/scr_stash.yy",},
+    {"name":"spr_coin","order":5,"path":"sprites/spr_coin/spr_coin.yy",},
+    {"name":"spr_floor","order":7,"path":"sprites/spr_floor/spr_floor.yy",},
+    {"name":"spr_player","order":3,"path":"sprites/spr_player/spr_player.yy",},
+    {"name":"spr_shadow","order":6,"path":"sprites/spr_shadow/spr_shadow.yy",},
   ],
 }
