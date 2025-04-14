@@ -1,6 +1,8 @@
 
+// Sprite credits: https://kenney.nl/
 
 // Startup
+// 1st method: initialize the struct directly inside the function.
 global.data = stash_load("data.sav", {	
 	save_slot : [
 		{
@@ -19,7 +21,8 @@ global.data = stash_load("data.sav", {
 	coins : []
 })
 
-global.config = stash_load("config.json", {
+// 2nd method: initialize the struct outside the function.
+var _config = {
 	fullscreen : false,
 	resolution : "1920x1080",
 	lang : "English",
@@ -28,8 +31,8 @@ global.config = stash_load("config.json", {
 		music : 1.0,
 		ambient : 1.0,
 	},
-})
-
+}
+global.config = stash_load("config.json", _config, false)
 
 // Custom save/load
 data_save = function() {

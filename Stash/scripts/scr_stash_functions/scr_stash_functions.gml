@@ -7,12 +7,7 @@
 	[]==========================================================[]
 */
 
-#macro STASH_PATH			"saves\\"			// The directory witch the files will be stored
-#macro STASH_ENCRYPT		false				// Encrypt the file information
-#macro STASH_ENABLED		true				// If false, only the default struct will be used
-#macro STASH_TRACE			true				// Traces stash save/load messages
-#macro STASH_PRIVATE_KEY	"Zf1MaWx9yPLt8qRo"	// Your private secure key. Change it before using the system
-
+///@func stash_save(filename, struct, [encrypt])
 ///@description				This funcion takes a filename and a struct, saving it as a json style file in plain text or encrypted.
 ///@arg	{String} filename	The name of the file to save as.
 ///@arg	{Struct} struct		The data that will be saved.
@@ -38,7 +33,7 @@ function stash_save(_filename, _struct, _encrypt = STASH_ENCRYPT) {
 		buffer_copy(_buffer_text, 0, _size, _buffer_temp, 4);
 		
 		// ARC4 encryption
-		var _buffer_arc4 = stash_arcfour_process(STASH_PRIVATE_KEY, _buffer_temp);
+		var _buffer_arc4 = stash_arcfour_process(STASH_KEY, _buffer_temp);
 		
 		// Compression using zlib
 		_buffer = buffer_compress(_buffer_arc4, 0, _size + 4);
@@ -66,7 +61,8 @@ function stash_save(_filename, _struct, _encrypt = STASH_ENCRYPT) {
 function stash_load(_filename, _default = undefined, _encrypt = STASH_ENCRYPT) {
 	var _file = STASH_PATH + _filename
 	
-	if (STASH_FORCE_DEFAULT && _default != undefined) {
+	// Stash disabled situation
+	if (!STASH_ENABLED && _default != undefined) {
 		stash_save(_filename, _default, _encrypt);
 		return _default;
 	}
@@ -84,7 +80,7 @@ function stash_load(_filename, _default = undefined, _encrypt = STASH_ENCRYPT) {
 			
 			// ARC4 decryption
 			buffer_seek(_buffer_arc4, buffer_seek_start, 0);
-			var _buffer_temp = stash_arcfour_process(STASH_PRIVATE_KEY, _buffer_arc4);
+			var _buffer_temp = stash_arcfour_process(STASH_KEY, _buffer_arc4);
 			var _size = buffer_get_size(_buffer_temp) - 4;
 			buffer_delete(_buffer_arc4);
 			

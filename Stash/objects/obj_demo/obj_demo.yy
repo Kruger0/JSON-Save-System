@@ -11,8 +11,8 @@
   "name":"obj_demo",
   "overriddenProperties":[],
   "parent":{
-    "name":"Demo",
-    "path":"folders/Demo.yy",
+    "name":"Objects",
+    "path":"folders/Demo/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
