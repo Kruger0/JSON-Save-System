@@ -175,8 +175,10 @@ function stash_arcfour_state(_key) {
 function stash_arcfour_process(_key, _buffer) {
 	// https://marketplace.gamemaker.io/assets/9192/gmarcfour
 	// https://en.wikipedia.org/wiki/RC4
-	static _state = stash_arcfour_state(_key);	
+	static __state = stash_arcfour_state(_key);
 	var _size = buffer_get_size(_buffer);
+	var _state = array_create(256)
+	array_copy(_state, 0, __state, 0, 256)
 	var _temp_buff = buffer_create(_size, buffer_fixed, 1);
 	var _original_pos = buffer_tell(_buffer);
 	buffer_seek(_buffer, buffer_seek_start, 0);
