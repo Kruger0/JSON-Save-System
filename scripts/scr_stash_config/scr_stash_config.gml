@@ -11,4 +11,4 @@
 #macro STASH_ENCRYPT	true				// Encrypt the file information.
 #macro STASH_TRACE		true				// Traces stash save/load messages.
 #macro STASH_PATH		"stash\\"			// The directory witch the files will be stored.
-#macro STASH_KEY		"Zf1MaWx9yPLt8qRo"	// Your private 16-byte encryption key. Change it before using the system.
+#macro STASH_KEY		"AaBbCcDd1234?@#%"	// Your private 16-byte encryption key. Change it before using the system.
