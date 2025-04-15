@@ -1,4 +1,4 @@
-<h1 align="center">Stash 1.0</h1>
+<h1 align="center">Stash 1.1</h1>
 Stash is a save/load system made for GameMaker Studio 2, designed to handle game data and configuration files, including encryption and obfuscation using algorithms like checksum and ARCFOUR.
 
 
